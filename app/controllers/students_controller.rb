@@ -1,8 +1,10 @@
 class StudentsController < ApplicationController
+    skip_before_action :verify_authenticity_token
     before_action :set_student, except: [:index, :create]
     
     def index 
         @students = Student.all
+        render :json => @students
     
     end 
 
@@ -11,17 +13,18 @@ class StudentsController < ApplicationController
         @student.save  
 
     end 
-    
-    def show 
 
+    def show 
+        render :json => @student
     end 
 
-    def update 
-
+    def update
+        @student.update(student_params)
+        render :plain => "Student at id: #{@student.id} succesfully updated"
     end 
 
     def destroy 
-
+        render :plain => "Student at id: #{@student.id} succesfully deleted"
     end 
 
     private 
