@@ -9,8 +9,17 @@ class StudentsController < ApplicationController
     end 
 
     def create
-        @student = Student.new(student_params)
-        @student.save  
+        begin
+            @student = Student.new(student_params)
+             if @student.save
+                render :json => @student
+             else
+                render :json => { errors: @student.errors }, :status => 422
+             end 
+        rescue ArgumentError => e 
+            render :json => { errors: e.message }, :status => 422
+        end 
+
 
     end 
 
@@ -19,8 +28,14 @@ class StudentsController < ApplicationController
     end 
 
     def update
-        @student.update(student_params)
-        render :plain => "Student at id: #{@student.id} succesfully updated"
+        begin 
+            @student.update!(student_params)
+            render :plain => "Student at id: #{@student.id} succesfully updated"
+        rescue ActiveRecord::RecordInvalid => e
+            render :json => { errors: e.message }, :status => 422
+        end 
+
+        
     end 
 
     def destroy 
