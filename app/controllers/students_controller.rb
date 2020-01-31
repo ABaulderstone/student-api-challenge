@@ -28,6 +28,7 @@ class StudentsController < ApplicationController
     end 
 
     def update
+        
         begin 
             @student.update!(student_params)
             render :plain => "Student at id: #{@student.id} succesfully updated"
@@ -38,14 +39,19 @@ class StudentsController < ApplicationController
         
     end 
 
-    def destroy 
+    def destroy
+        @student.delete 
         render :plain => "Student at id: #{@student.id} succesfully deleted"
     end 
 
     private 
     def set_student
-        id = params[:id]
-        @student = Student.find(id)
+        begin 
+            id = params[:id]
+            @student = Student.find(id)
+        rescue ActiveRecord::RecordNotFound => e
+            render :json => { errors: e.message }, :status => 404
+        end
     end  
 
     def student_params
