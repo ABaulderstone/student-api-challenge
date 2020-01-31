@@ -5,8 +5,12 @@ Sometimes we won't be using views, next term we'll take a closer look at APIs bu
 
 
 # Installation 
- *  Clone the repo 
- * ``` $ rails db:setup ```
+ *  Make sure you're in the directory that you keep your Rails projects and clone the repo 
+ ``` 
+ $ cd student-api-challenge
+ $ rails db:create
+ $ rails db:migrate 
+ ```
 
  # Challenge
  ## Core
