@@ -8,6 +8,7 @@ Sometimes we won't be using views, next term we'll take a closer look at APIs bu
  *  Make sure you're in the directory that you keep your Rails projects and clone the repo 
  ``` 
  $ cd student-api-challenge
+ $ bundle install
  $ rails db:create
  $ rails db:migrate 
  ```
