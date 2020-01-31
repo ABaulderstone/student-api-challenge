@@ -1,24 +1,24 @@
-# README
+# Student API 
+Sometimes we won't be using views, next term we'll take a closer look at APIs but we have already seen how they often return JSON. This is a very simple API for creating student records. It follows REST conventions and the endpoints can be seen by running 
+``` $ rails routes```.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
 
-* Ruby version
+# Installation 
+ *  Clone the repo 
+ * ``` $ rails db:setup ```
 
-* System dependencies
+ # Challenge
+ ## Core
+ * Read through db/schema.rb,  app/controllers/students_controller.rb andapp/models/student.rb to get an understanding of the fields in the database 
+ * If you're not sure about the enum syntax in student.rb check the [docs](https://api.rubyonrails.org/v5.2.4.1/classes/ActiveRecord/Enum.html)
 
-* Configuration
+ * Using rails console create, update, and destroy some records, check the results using either psql command line or DBeaver 
 
-* Database creation
+## Advanced 
 
-* Database initialization
+* Use postman to perform CRUD operations on the data.
 
-* How to run the test suite
+* Generate a new migration that adds a field to the students table
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Add some validation to the Student model for your new field
