@@ -22,3 +22,6 @@ Sometimes we won't be using views, next term we'll take a closer look at APIs bu
 * Generate a new migration that adds a field to the students table
 
 * Add some validation to the Student model for your new field
+
+## BONUS
+* Create a simple ruby terminal app that uses this API 
