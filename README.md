@@ -17,7 +17,7 @@ Sometimes we won't be using views, next term we'll take a closer look at APIs bu
 
 ## Advanced 
 
-* Use postman to perform CRUD operations on the data.
+* Use postman to perform CRUD operations on the data. Note the kind of responses you get and think about how they could be useful for another app
 
 * Generate a new migration that adds a field to the students table
 
